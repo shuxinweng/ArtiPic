@@ -1,0 +1,2 @@
+# ArtiPic
+AI generated pictures
