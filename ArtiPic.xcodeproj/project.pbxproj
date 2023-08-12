@@ -51,6 +51,7 @@
 		DB3A7AC32A86890800160BFD /* ArtiPic */ = {
 			isa = PBXGroup;
 			children = (
+				E529B18B2A88218200C94E60 /* Core */,
 				DB3A7AC42A86890800160BFD /* ArtiPicApp.swift */,
 				DB3A7AC62A86890800160BFD /* ContentView.swift */,
 				DB3A7AC82A86890900160BFD /* Assets.xcassets */,
@@ -65,6 +66,13 @@
 				DB3A7ACB2A86890900160BFD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E529B18B2A88218200C94E60 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
