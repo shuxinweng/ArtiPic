@@ -94,12 +94,14 @@ struct LoginView: View {
                 } label: {
                     HStack(spacing: 3){
                         Text("Don't have an account?")
+                            .foregroundColor(Color(.systemGray))
                         
                         Text("Sign up")
                             .fontWeight(.semibold)
+                            .foregroundColor(Color(.systemBrown))
                     }
                     .font(.footnote)
-                    .foregroundColor(Color(.systemBrown))
+                   
                 }
                 .padding(.vertical, 16)
 
