@@ -67,7 +67,7 @@ struct ProfileView: View {
                 }
                 
                 // post grid view
-//                PostGridView(posts: posts)
+                //PostGridView(posts: posts)
                     
             }
             .navigationBarTitleDisplayMode(.inline)
