@@ -15,13 +15,13 @@ struct LoginView: View {
         NavigationView{
             VStack{
                 
-                Spacer()
                 
                 // logo image
                 Image("artipic_logo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
+                    .padding(.top, 60)
                 
                 // text fields
                 VStack{
@@ -97,7 +97,7 @@ struct LoginView: View {
                             .foregroundColor(Color(.systemGray))
                         
                         Text("Sign up")
-                            .fontWeight(.semibold)
+                            .fontWeight(.black)
                             .foregroundColor(Color(.systemBrown))
                     }
                     .font(.footnote)
