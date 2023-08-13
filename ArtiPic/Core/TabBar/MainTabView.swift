@@ -7,30 +7,37 @@
 
 import SwiftUI
 
+class TabViewModel: ObservableObject {
+    @Published var selectedIndex = 0
+}
+
 struct MainTabView: View {
+    @StateObject private var tabViewModel = TabViewModel()
+    
     var body: some View {
-        TabView {
-            Text("Photo")
+        TabView(selection: $tabViewModel.selectedIndex){
+            PhotoView()
                 .tabItem {
                     Image(systemName: "photo.stack")
-                }
-            
-            Text("AI")
+                }.tag(0)
+
+            AIView()
                 .tabItem {
                     Image(systemName: "paintbrush.pointed.fill")
-                }
-            
-            Text("Collection")
+                }.tag(1)
+
+            CollectionView()
                 .tabItem {
                     Image(systemName: "bookmark")
-                }
-            
+                }.tag(2)
+
             ProfileView(user: User.MOCK_USERS[0])
                 .tabItem {
                     Image(systemName: "person")
-                }
+                }.tag(3)
         }
         .accentColor(.black)
+        .environmentObject(tabViewModel)
     }
 }
 
