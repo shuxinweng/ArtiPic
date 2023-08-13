@@ -18,10 +18,10 @@ struct LoginView: View {
                 Spacer()
                 
                 // logo image
-                Image("artpic_logo")
+                Image("artipic_logo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 220, height: 100)
+                    .frame(width: 200, height: 200)
                 
                 // text fields
                 VStack{

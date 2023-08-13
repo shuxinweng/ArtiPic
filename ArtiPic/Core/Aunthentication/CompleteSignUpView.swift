@@ -20,7 +20,7 @@ struct CompleteSignUpView: View {
                 .padding(.top)
                 .multilineTextAlignment(.center)
 
-            Text("Click below to complete registration and start using ArtPic")
+            Text("Click below to complete registration and start using ArtiPic")
                 .font(.footnote)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
