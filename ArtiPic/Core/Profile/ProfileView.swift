@@ -25,7 +25,7 @@ struct ProfileView: View {
                 VStack(spacing: 10) {
                     // pic
                     HStack {
-                        Image(user.profileImageUrl ?? "")
+                        Image(user.profileImageUrl ?? "defaultUserImage")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 80, height: 80)
