@@ -22,14 +22,14 @@ class ContentViewModel: ObservableObject{
     
     func setupSubscribers(){
         service.$userSession
-            .receive(on: DispatchQueue.main)  // Ensure updates are on the main thread
+            .receive(on: DispatchQueue.main)  // Ensure updates are on the main thread (related wit @MainActor)
             .sink { [weak self] userSession in
                 self?.userSession = userSession
             }
             .store(in: &cancellables)
         
         service.$currentUser
-            .receive(on: DispatchQueue.main)  // Ensure updates are on the main thread
+            .receive(on: DispatchQueue.main)  // Ensure updates are on the main thread (related wit @MainActor)
             .sink { [weak self] currentUser in
                 self?.currentUser = currentUser
             }
