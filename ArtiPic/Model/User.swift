@@ -14,7 +14,7 @@ struct User: Identifiable, Hashable, Codable{
     var profileImageUrl: String?
     var fullname: String?
     var bio: String?
-    var savedImage: [String]
+    var savedImage: [String]?
 }
 
 extension User {
