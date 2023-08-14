@@ -31,6 +31,7 @@
 		E529B1BF2A895F7100C94E60 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1BE2A895F7100C94E60 /* PhotoView.swift */; };
 		E529B1C22A895F8E00C94E60 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1C12A895F8E00C94E60 /* AIView.swift */; };
 		E529B1C52A895FA600C94E60 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1C42A895FA600C94E60 /* CollectionView.swift */; };
+		E529B1C72A89A5B600C94E60 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1C62A89A5B600C94E60 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		E529B1BE2A895F7100C94E60 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		E529B1C12A895F8E00C94E60 /* AIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
 		E529B1C42A895FA600C94E60 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		E529B1C62A89A5B600C94E60 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				E529B1BB2A89527000C94E60 /* RegistrationViewModel.swift */,
+				E529B1C62A89A5B600C94E60 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				E529B19F2A883CBC00C94E60 /* AddEmailView.swift in Sources */,
 				E529B1B42A8945BD00C94E60 /* AuthService.swift in Sources */,
 				E529B1972A88288800C94E60 /* ProfileView.swift in Sources */,
+				E529B1C72A89A5B600C94E60 /* LoginViewModel.swift in Sources */,
 				E529B1A12A883E4100C94E60 /* CreateUsernameView.swift in Sources */,
 				E529B1C52A895FA600C94E60 /* CollectionView.swift in Sources */,
 				DB3A7AC72A86890800160BFD /* ContentView.swift in Sources */,
