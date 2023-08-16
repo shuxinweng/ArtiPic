@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     let user: User
+    @State private var showEditProfile = false
     
 //    private let imageDimension: CGFloat = (UIScreen.main.bounds.width / 3)-1
     
@@ -25,11 +26,7 @@ struct ProfileView: View {
                 VStack(spacing: 10) {
                     // pic
                     HStack {
-                        Image(user.profileImageUrl ?? "")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 80, height: 80)
-                            .clipShape(Circle())
+                        CircularProfileImageView(user: user, size: .large)
                         
                         Spacer()
                         
@@ -37,8 +34,12 @@ struct ProfileView: View {
                     .padding(.horizontal, 16)
                     
                     
-                    // username and bio
+                    // fullname and bio
                     VStack(alignment: .leading, spacing: 4) {
+                        Text(user.fullname ?? "")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                        
                         Text(user.bio ?? "")
                             .font(.footnote)
                     }
@@ -49,7 +50,7 @@ struct ProfileView: View {
                     
                     // action button
                     Button {
-                        
+                        showEditProfile.toggle()
                     } label: {
                         Text("Edit Profile")
                             .font(.subheadline)
@@ -63,7 +64,11 @@ struct ProfileView: View {
                     }
                     
                     
+                    
                     Divider()
+                }
+                .fullScreenCover(isPresented: $showEditProfile) {
+                    EditProfileView(user: user)
                 }
                 
                 // post grid view
