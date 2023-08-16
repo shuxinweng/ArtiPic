@@ -105,6 +105,8 @@
 		DB3A7AC32A86890800160BFD /* ArtiPic */ = {
 			isa = PBXGroup;
 			children = (
+				DB3D4A9B2A8C87B100E338AC /* Extensions */,
+				DB3D4A9A2A8C879900E338AC /* Services */,
 				E529B18C2A8821BB00C94E60 /* App */,
 				E529B18B2A88218200C94E60 /* Core */,
 				E529B18F2A88223900C94E60 /* Model */,
@@ -130,6 +132,20 @@
 				DB3D4A982A8C6FCE00E338AC /* CategoriesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DB3D4A9A2A8C879900E338AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DB3D4A9B2A8C87B100E338AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DBC5E13F2A8C37770015CE4B /* View */ = {
