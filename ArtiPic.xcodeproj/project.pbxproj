@@ -11,12 +11,9 @@
 		DB3A7AC72A86890800160BFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A7AC62A86890800160BFD /* ContentView.swift */; };
 		DB3A7AC92A86890900160BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3A7AC82A86890900160BFD /* Assets.xcassets */; };
 		DB3A7ACC2A86890900160BFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3A7ACB2A86890900160BFD /* Preview Assets.xcassets */; };
-		DB3D4A9D2A8C88FA00E338AC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4A9C2A8C88FA00E338AC /* Photo.swift */; };
-		DB3D4A9F2A8C890400E338AC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4A9E2A8C890400E338AC /* Category.swift */; };
-		DB3D4AA32A8C892E00E338AC /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AA22A8C892E00E338AC /* PhotoViewModel.swift */; };
-		DB3D4AA52A8C894200E338AC /* GroupPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AA42A8C894200E338AC /* GroupPhotoView.swift */; };
-		DB3D4AA72A8C894E00E338AC /* SinglePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AA62A8C894E00E338AC /* SinglePhotoView.swift */; };
-		DB3D4AA92A8C898900E338AC /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AA82A8C898900E338AC /* CategoryViewModel.swift */; };
+		DB3D4AAB2A8D418300E338AC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AAA2A8D418300E338AC /* ImagePicker.swift */; };
+		DB3D4AB12A922DB600E338AC /* AIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AB02A922DB600E338AC /* AIViewModel.swift */; };
+		DB3D4AB42A922E0D00E338AC /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = DB3D4AB32A922E0D00E338AC /* OpenAIKit */; };
 		E529B1942A88233100C94E60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1932A88233100C94E60 /* MainTabView.swift */; };
 		E529B1972A88288800C94E60 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1962A88288800C94E60 /* ProfileView.swift */; };
 		E529B1992A8829B700C94E60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1982A8829B700C94E60 /* User.swift */; };
@@ -51,12 +48,8 @@
 		DB3A7AC62A86890800160BFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB3A7AC82A86890900160BFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB3A7ACB2A86890900160BFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DB3D4A9C2A8C88FA00E338AC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		DB3D4A9E2A8C890400E338AC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		DB3D4AA22A8C892E00E338AC /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
-		DB3D4AA42A8C894200E338AC /* GroupPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPhotoView.swift; sourceTree = "<group>"; };
-		DB3D4AA62A8C894E00E338AC /* SinglePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePhotoView.swift; sourceTree = "<group>"; };
-		DB3D4AA82A8C898900E338AC /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		DB3D4AAA2A8D418300E338AC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		DB3D4AB02A922DB600E338AC /* AIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIViewModel.swift; sourceTree = "<group>"; };
 		E529B1932A88233100C94E60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E529B1962A88288800C94E60 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E529B1982A8829B700C94E60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -90,6 +83,7 @@
 				E529B1AC2A89436600C94E60 /* FirebaseFirestore in Frameworks */,
 				E529B1AE2A89436600C94E60 /* FirebaseFirestoreSwift in Frameworks */,
 				E529B1D22A8C437800C94E60 /* Kingfisher in Frameworks */,
+				DB3D4AB42A922E0D00E338AC /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				E529B1BE2A895F7100C94E60 /* PhotoView.swift */,
-				DB3D4AA42A8C894200E338AC /* GroupPhotoView.swift */,
-				DB3D4AA62A8C894E00E338AC /* SinglePhotoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,10 +140,25 @@
 		DB3D4AA12A8C891F00E338AC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DB3D4AA22A8C892E00E338AC /* PhotoViewModel.swift */,
-				DB3D4AA82A8C898900E338AC /* CategoryViewModel.swift */,
+				DB3D4AAA2A8D418300E338AC /* ImagePicker.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DB3D4AAC2A9228CF00E338AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB3D4AB02A922DB600E338AC /* AIViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DB3D4AAD2A9228D700E338AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E529B1C12A895F8E00C94E60 /* AIView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E529B18B2A88218200C94E60 /* Core */ = {
@@ -196,8 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				E529B1982A8829B700C94E60 /* User.swift */,
-				DB3D4A9C2A8C88FA00E338AC /* Photo.swift */,
-				DB3D4A9E2A8C890400E338AC /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,7 +309,8 @@
 		E529B1C02A895F7E00C94E60 /* AI */ = {
 			isa = PBXGroup;
 			children = (
-				E529B1C12A895F8E00C94E60 /* AIView.swift */,
+				DB3D4AAD2A9228D700E338AC /* View */,
+				DB3D4AAC2A9228CF00E338AC /* ViewModel */,
 			);
 			path = AI;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 				E529B1AD2A89436600C94E60 /* FirebaseFirestoreSwift */,
 				E529B1AF2A89436600C94E60 /* FirebaseStorage */,
 				E529B1D12A8C437800C94E60 /* Kingfisher */,
+				DB3D4AB32A922E0D00E338AC /* OpenAIKit */,
 			);
 			productName = ArtiPic;
 			productReference = DB3A7AC12A86890800160BFD /* ArtiPic.app */;
@@ -388,6 +395,7 @@
 			packageReferences = (
 				E529B1A82A89436600C94E60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E529B1D02A8C437700C94E60 /* XCRemoteSwiftPackageReference "kingfisher" */,
+				DB3D4AB22A922E0D00E338AC /* XCRemoteSwiftPackageReference "OpenAIKit" */,
 			);
 			productRefGroup = DB3A7AC22A86890800160BFD /* Products */;
 			projectDirPath = "";
@@ -416,14 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3D4AA92A8C898900E338AC /* CategoryViewModel.swift in Sources */,
 				E529B19B2A88394700C94E60 /* LoginView.swift in Sources */,
 				E529B1B92A8948F600C94E60 /* ContentViewModel.swift in Sources */,
 				E529B1A52A883FE700C94E60 /* CompleteSignUpView.swift in Sources */,
 				E529B1BF2A895F7100C94E60 /* PhotoView.swift in Sources */,
-				DB3D4AA72A8C894E00E338AC /* SinglePhotoView.swift in Sources */,
-				DB3D4AA32A8C892E00E338AC /* PhotoViewModel.swift in Sources */,
 				E529B1BC2A89527000C94E60 /* RegistrationViewModel.swift in Sources */,
+				DB3D4AB12A922DB600E338AC /* AIViewModel.swift in Sources */,
 				E529B19F2A883CBC00C94E60 /* AddEmailView.swift in Sources */,
 				E529B1B42A8945BD00C94E60 /* AuthService.swift in Sources */,
 				E529B1972A88288800C94E60 /* ProfileView.swift in Sources */,
@@ -433,17 +439,15 @@
 				DB3A7AC72A86890800160BFD /* ContentView.swift in Sources */,
 				E529B1CD2A8AE90400C94E60 /* EditProfileViewModel.swift in Sources */,
 				E529B1D42A8C440C00C94E60 /* CircularProfileImageView.swift in Sources */,
+				DB3D4AAB2A8D418300E338AC /* ImagePicker.swift in Sources */,
 				DB3A7AC52A86890800160BFD /* ArtiPicApp.swift in Sources */,
 				E529B1CF2A8AF22D00C94E60 /* ImageUploader.swift in Sources */,
-				DB3D4A9D2A8C88FA00E338AC /* Photo.swift in Sources */,
 				E529B1C92A8AE05A00C94E60 /* EditProfileView.swift in Sources */,
-				DB3D4AA52A8C894200E338AC /* GroupPhotoView.swift in Sources */,
 				E529B19D2A8839D200C94E60 /* TextFieldModifier.swift in Sources */,
 				E529B1C22A895F8E00C94E60 /* AIView.swift in Sources */,
 				E529B1A32A883F2900C94E60 /* CreatePasswordView.swift in Sources */,
 				E529B1992A8829B700C94E60 /* User.swift in Sources */,
 				E529B1942A88233100C94E60 /* MainTabView.swift in Sources */,
-				DB3D4A9F2A8C890400E338AC /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +650,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DB3D4AB22A922E0D00E338AC /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		E529B1A82A89436600C94E60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -665,6 +677,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DB3D4AB32A922E0D00E338AC /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB3D4AB22A922E0D00E338AC /* XCRemoteSwiftPackageReference "OpenAIKit" */;
+			productName = OpenAIKit;
+		};
 		E529B1A92A89436600C94E60 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E529B1A82A89436600C94E60 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
