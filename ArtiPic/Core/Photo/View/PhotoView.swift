@@ -10,34 +10,10 @@ import FirebaseStorage
 import FirebaseFirestore
 
 struct PhotoView: View {
-    @State var isPickerShowing = false
-    @State var selectedImage: UIImage?
     @State var retrievedImages = [UIImage]()
     
     var body: some View {
         VStack {
-            if selectedImage != nil {
-                Image(uiImage: selectedImage!)
-                    .resizable()
-                    .frame(width: 200, height: 200)
-            }
-            
-            Button {
-                isPickerShowing = true
-            } label: {
-                Text("Select a Photo")
-            }
-            
-            if selectedImage != nil {
-                Button {
-                    uploadPhoto()
-                } label: {
-                    Text("Upload photo")
-                }
-            }
-            
-            Divider()
-            
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                     ForEach(retrievedImages, id: \.self) { image in
@@ -49,43 +25,8 @@ struct PhotoView: View {
                 }
             }
         }
-        .sheet(isPresented: $isPickerShowing, onDismiss: nil) {
-            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
-        }
         .onAppear {
             retrievePhotos()
-        }
-    }
-    
-    func uploadPhoto() {
-        guard selectedImage != nil else {
-            return
-        }
-        
-        let storageRef = Storage.storage().reference()
-        
-        let imageData = selectedImage!.jpegData(compressionQuality: 0.8)
-        
-        guard imageData != nil else {
-            return
-        }
-        
-        let path = "photos/\(UUID().uuidString).jpg"
-        let fileRef = storageRef.child(path)
-        
-        let uploadTask = fileRef.putData(imageData!, metadata: nil) {
-            metadata, error in
-            
-            if error == nil && metadata != nil {
-                let db = Firestore.firestore()
-                db.collection("photos").document().setData(["imageUrl": path]) { error in
-                    if error == nil {
-                        DispatchQueue.main.async {
-                            self.retrievedImages.append(self.selectedImage!)
-                        }
-                    }
-                }
-            }
         }
     }
     
