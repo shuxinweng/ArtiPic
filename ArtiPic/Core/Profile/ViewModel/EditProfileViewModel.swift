@@ -8,6 +8,7 @@
 import PhotosUI
 import Firebase
 import SwiftUI
+import FirebaseFirestore
 
 @MainActor
 class EditProfileViewModel: ObservableObject{
