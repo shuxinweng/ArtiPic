@@ -17,6 +17,8 @@
 		DB3D4AB82A93220E00E338AC /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AB72A93220E00E338AC /* PeopleView.swift */; };
 		DB3D4ABA2A93221B00E338AC /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AB92A93221B00E338AC /* PlantView.swift */; };
 		DB3D4ABC2A93222900E338AC /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4ABB2A93222900E338AC /* OtherView.swift */; };
+		DB3D4AC02A932F8F00E338AC /* SinglePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4ABF2A932F8F00E338AC /* SinglePhotoView.swift */; };
+		DB3D4AC22A9331C300E338AC /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AC12A9331C300E338AC /* PhotoModel.swift */; };
 		E529B1942A88233100C94E60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1932A88233100C94E60 /* MainTabView.swift */; };
 		E529B1972A88288800C94E60 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1962A88288800C94E60 /* ProfileView.swift */; };
 		E529B1992A8829B700C94E60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1982A8829B700C94E60 /* User.swift */; };
@@ -56,6 +58,8 @@
 		DB3D4AB72A93220E00E338AC /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		DB3D4AB92A93221B00E338AC /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
 		DB3D4ABB2A93222900E338AC /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
+		DB3D4ABF2A932F8F00E338AC /* SinglePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SinglePhotoView.swift; path = ArtiPic/Core/Photo/View/SinglePhotoView.swift; sourceTree = SOURCE_ROOT; };
+		DB3D4AC12A9331C300E338AC /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoModel.swift; path = ArtiPic/Core/Photo/View/PhotoModel.swift; sourceTree = SOURCE_ROOT; };
 		E529B1932A88233100C94E60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E529B1962A88288800C94E60 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E529B1982A8829B700C94E60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		DB3D4AA02A8C891500E338AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DB3D4ABF2A932F8F00E338AC /* SinglePhotoView.swift */,
 				E529B1BE2A895F7100C94E60 /* PhotoView.swift */,
 				DB3D4AB52A9321F900E338AC /* CategoryView.swift */,
 				DB3D4AB72A93220E00E338AC /* PeopleView.swift */,
@@ -150,6 +155,7 @@
 		DB3D4AA12A8C891F00E338AC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DB3D4AC12A9331C300E338AC /* PhotoModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -437,9 +443,11 @@
 				E529B1B92A8948F600C94E60 /* ContentViewModel.swift in Sources */,
 				DB3D4ABC2A93222900E338AC /* OtherView.swift in Sources */,
 				E529B1A52A883FE700C94E60 /* CompleteSignUpView.swift in Sources */,
+				DB3D4AC22A9331C300E338AC /* PhotoModel.swift in Sources */,
 				E529B1BF2A895F7100C94E60 /* PhotoView.swift in Sources */,
 				E529B1BC2A89527000C94E60 /* RegistrationViewModel.swift in Sources */,
 				DB3D4AB12A922DB600E338AC /* AIViewModel.swift in Sources */,
+				DB3D4AC02A932F8F00E338AC /* SinglePhotoView.swift in Sources */,
 				DB3D4AB82A93220E00E338AC /* PeopleView.swift in Sources */,
 				E529B19F2A883CBC00C94E60 /* AddEmailView.swift in Sources */,
 				E529B1B42A8945BD00C94E60 /* AuthService.swift in Sources */,

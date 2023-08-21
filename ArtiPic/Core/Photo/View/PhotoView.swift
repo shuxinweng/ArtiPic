@@ -10,20 +10,23 @@ import FirebaseStorage
 import FirebaseFirestore
 
 struct PhotoView: View {
-    @State var retrievedImages = [UIImage]()
+    @State var retrievedImages = [PhotoInfo]()
     
     var body: some View {
-        VStack {
+        NavigationView {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                    ForEach(retrievedImages, id: \.self) { image in
-                        Image(uiImage: image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 100)
+                    ForEach(retrievedImages, id: \.self.image) { photoInfo in
+                        NavigationLink(destination: SinglePhotoView(photoInfo: photoInfo)) {
+                            Image(uiImage: photoInfo.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 100)
+                        }
                     }
                 }
             }
+            .navigationTitle("Photo Gallery")
         }
         .onAppear {
             retrievePhotos()
@@ -37,31 +40,33 @@ struct PhotoView: View {
         
         db.collection("photos").getDocuments { snapshot, error in
             if error == nil && snapshot != nil {
-                
-                var paths = [String]()
-                
                 for doc in snapshot!.documents {
-                    paths.append(doc["imageUrl"] as! String)
-                }
-                
-                for path in paths {
-                    let storageRef = Storage.storage().reference()
-                    
-                    let fileRef = storageRef.child(path)
-                    
-                    fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
-                        if error == nil && data != nil {
-                            
-                            if let image = UIImage(data: data!) {
-                                
-                                DispatchQueue.main.async {
-                                    retrievedImages.append(image)
+                    if let imageUrl = doc["imageUrl"] as? String,
+                       let keyword = doc["keyword"] as? String,
+                       let prompt = doc["prompt"] as? String {
+                        
+                        let storageRef = Storage.storage().reference()
+                        let fileRef = storageRef.child(imageUrl)
+                        
+                        fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                            if error == nil && data != nil {
+                                if let image = UIImage(data: data!) {
+                                    let photoInfo = PhotoInfo(image: image, keyword: keyword, prompt: prompt)
+                                    
+                                    print("Image fetched:", imageUrl)
+                                    
+                                    DispatchQueue.main.async {
+                                        retrievedImages.append(photoInfo)
+                                    }
                                 }
-                                
+                            } else {
+                                print("Error fetching image:", error?.localizedDescription ?? "Unknown error")
                             }
                         }
                     }
                 }
+            } else {
+                print("Error fetching documents:", error?.localizedDescription ?? "Unknown error")
             }
         }
     }
