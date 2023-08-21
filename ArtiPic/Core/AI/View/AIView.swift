@@ -16,6 +16,7 @@ struct AIView: View {
     @State var image: UIImage?
     @State var retrievedImages = [UIImage]()
     @State var isImageGenerated = false
+    @State var keyword = ""
     
     var body: some View {
         NavigationView {
@@ -40,6 +41,12 @@ struct AIView: View {
                 }
                 
                 Spacer()
+                
+                Text("Please only enter People, Plant, photos, or Other")
+                Text("Capital letter matters")
+                
+                TextField("Enter Keyword", text: $keyword)
+                    .padding()
                 
                 TextField("Image Prompt", text: $text)
                     .padding()
@@ -86,8 +93,9 @@ struct AIView: View {
             
             if error == nil && metadata != nil {
                 let db = Firestore.firestore()
-                db.collection("photos").addDocument(data: [
-                    "prompt": self.text,    // Include the prompt field
+                db.collection(keyword).addDocument(data: [
+                    "prompt": self.text,
+                    "keyword": self.keyword,
                     "imageUrl": path
                 ]) { error in
                     if error == nil {
