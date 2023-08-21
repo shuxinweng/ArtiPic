@@ -13,6 +13,10 @@
 		DB3A7ACC2A86890900160BFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3A7ACB2A86890900160BFD /* Preview Assets.xcassets */; };
 		DB3D4AB12A922DB600E338AC /* AIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AB02A922DB600E338AC /* AIViewModel.swift */; };
 		DB3D4AB42A922E0D00E338AC /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = DB3D4AB32A922E0D00E338AC /* OpenAIKit */; };
+		DB3D4AB62A9321F900E338AC /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AB52A9321F900E338AC /* CategoryView.swift */; };
+		DB3D4AB82A93220E00E338AC /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AB72A93220E00E338AC /* PeopleView.swift */; };
+		DB3D4ABA2A93221B00E338AC /* PlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AB92A93221B00E338AC /* PlantView.swift */; };
+		DB3D4ABC2A93222900E338AC /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4ABB2A93222900E338AC /* OtherView.swift */; };
 		E529B1942A88233100C94E60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1932A88233100C94E60 /* MainTabView.swift */; };
 		E529B1972A88288800C94E60 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1962A88288800C94E60 /* ProfileView.swift */; };
 		E529B1992A8829B700C94E60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1982A8829B700C94E60 /* User.swift */; };
@@ -48,6 +52,10 @@
 		DB3A7AC82A86890900160BFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB3A7ACB2A86890900160BFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB3D4AB02A922DB600E338AC /* AIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIViewModel.swift; sourceTree = "<group>"; };
+		DB3D4AB52A9321F900E338AC /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		DB3D4AB72A93220E00E338AC /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
+		DB3D4AB92A93221B00E338AC /* PlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantView.swift; sourceTree = "<group>"; };
+		DB3D4ABB2A93222900E338AC /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		E529B1932A88233100C94E60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E529B1962A88288800C94E60 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E529B1982A8829B700C94E60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -131,6 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				E529B1BE2A895F7100C94E60 /* PhotoView.swift */,
+				DB3D4AB52A9321F900E338AC /* CategoryView.swift */,
+				DB3D4AB72A93220E00E338AC /* PeopleView.swift */,
+				DB3D4AB92A93221B00E338AC /* PlantView.swift */,
+				DB3D4ABB2A93222900E338AC /* OtherView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,10 +435,12 @@
 			files = (
 				E529B19B2A88394700C94E60 /* LoginView.swift in Sources */,
 				E529B1B92A8948F600C94E60 /* ContentViewModel.swift in Sources */,
+				DB3D4ABC2A93222900E338AC /* OtherView.swift in Sources */,
 				E529B1A52A883FE700C94E60 /* CompleteSignUpView.swift in Sources */,
 				E529B1BF2A895F7100C94E60 /* PhotoView.swift in Sources */,
 				E529B1BC2A89527000C94E60 /* RegistrationViewModel.swift in Sources */,
 				DB3D4AB12A922DB600E338AC /* AIViewModel.swift in Sources */,
+				DB3D4AB82A93220E00E338AC /* PeopleView.swift in Sources */,
 				E529B19F2A883CBC00C94E60 /* AddEmailView.swift in Sources */,
 				E529B1B42A8945BD00C94E60 /* AuthService.swift in Sources */,
 				E529B1972A88288800C94E60 /* ProfileView.swift in Sources */,
@@ -435,12 +449,14 @@
 				E529B1C52A895FA600C94E60 /* CollectionView.swift in Sources */,
 				DB3A7AC72A86890800160BFD /* ContentView.swift in Sources */,
 				E529B1CD2A8AE90400C94E60 /* EditProfileViewModel.swift in Sources */,
+				DB3D4AB62A9321F900E338AC /* CategoryView.swift in Sources */,
 				E529B1D42A8C440C00C94E60 /* CircularProfileImageView.swift in Sources */,
 				DB3A7AC52A86890800160BFD /* ArtiPicApp.swift in Sources */,
 				E529B1CF2A8AF22D00C94E60 /* ImageUploader.swift in Sources */,
 				E529B1C92A8AE05A00C94E60 /* EditProfileView.swift in Sources */,
 				E529B19D2A8839D200C94E60 /* TextFieldModifier.swift in Sources */,
 				E529B1C22A895F8E00C94E60 /* AIView.swift in Sources */,
+				DB3D4ABA2A93221B00E338AC /* PlantView.swift in Sources */,
 				E529B1A32A883F2900C94E60 /* CreatePasswordView.swift in Sources */,
 				E529B1992A8829B700C94E60 /* User.swift in Sources */,
 				E529B1942A88233100C94E60 /* MainTabView.swift in Sources */,
