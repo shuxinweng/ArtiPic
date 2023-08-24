@@ -43,6 +43,7 @@
 		E529B1CF2A8AF22D00C94E60 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1CE2A8AF22D00C94E60 /* ImageUploader.swift */; };
 		E529B1D22A8C437800C94E60 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E529B1D12A8C437800C94E60 /* Kingfisher */; };
 		E529B1D42A8C440C00C94E60 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1D32A8C440C00C94E60 /* CircularProfileImageView.swift */; };
+		E5DA44F42A97F4EE00D59198 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA44F32A97F4EE00D59198 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		E529B1CC2A8AE90400C94E60 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		E529B1CE2A8AF22D00C94E60 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		E529B1D32A8C440C00C94E60 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		E5DA44F32A97F4EE00D59198 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,13 +149,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DB3D4AA12A8C891F00E338AC /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		DB3D4AAC2A9228CF00E338AC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				E529B1982A8829B700C94E60 /* User.swift */,
+				E5DA44F32A97F4EE00D59198 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,7 +305,6 @@
 		E529B1BD2A895F4D00C94E60 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
-				DB3D4AA12A8C891F00E338AC /* ViewModel */,
 				DB3D4AA02A8C891500E338AC /* View */,
 			);
 			path = Photo;
@@ -433,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5DA44F42A97F4EE00D59198 /* Photo.swift in Sources */,
 				E529B19B2A88394700C94E60 /* LoginView.swift in Sources */,
 				E529B1B92A8948F600C94E60 /* ContentViewModel.swift in Sources */,
 				DB3D4ABC2A93222900E338AC /* OtherView.swift in Sources */,

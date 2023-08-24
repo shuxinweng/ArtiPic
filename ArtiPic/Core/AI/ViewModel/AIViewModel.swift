@@ -9,8 +9,13 @@ import Foundation
 import OpenAIKit
 import SwiftUI
 
+import PhotosUI
+import Firebase
+
 class AIViewModel: ObservableObject {
     private var openai: OpenAI?
+    private var uiImage: UIImage?
+    @Published var postImage: Image?
     
     func setup() {
         guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
@@ -37,6 +42,12 @@ class AIViewModel: ObservableObject {
             let result = try await openai.createImage(parameters: params)
             let data = result.data[0].image
             let image = try openai.decodeBase64Image(data)
+           
+            
+            self.uiImage = image
+            
+            
+            
             return image
         }
         catch {
@@ -44,4 +55,22 @@ class AIViewModel: ObservableObject {
             return nil
         }
     }
+    
+    func uploadPhoto(keyword: String, prompt: String) async throws{
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        guard let uiImage = uiImage else {return}
+        
+        
+        let photoRef = Firestore.firestore().collection("Photos").document()
+        guard let imageUrl = try await ImageUploader.uploadImage(image: uiImage) else {return}
+//        guard let imageUrl = try await ImageUploader.uploadImage(image: uiImage, compressionQualityCGFloat: 0.8, storageName: "photos") else {return}
+        let photo = Photo(id: "", ownerUid: uid, keyword: keyword, prompt: prompt, imageUrl: imageUrl, isCollected: false, timestamp: Timestamp())
+        guard let encodedPhoto = try? Firestore.Encoder().encode(photo) else {return}
+        
+        try await photoRef.setData(encodedPhoto)
+    }
+    
+    
+    
 }
+
