@@ -56,20 +56,23 @@ class AIViewModel: ObservableObject {
         }
     }
     
-    func uploadPhoto(keyword: String, prompt: String) async throws{
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        guard let uiImage = uiImage else {return}
-        
-        
-        let photoRef = Firestore.firestore().collection("Photos").document()
-        guard let imageUrl = try await ImageUploader.uploadImage(image: uiImage) else {return}
-//        guard let imageUrl = try await ImageUploader.uploadImage(image: uiImage, compressionQualityCGFloat: 0.8, storageName: "photos") else {return}
-        let photo = Photo(id: "", ownerUid: uid, keyword: keyword, prompt: prompt, imageUrl: imageUrl, isCollected: false, timestamp: Timestamp())
-        guard let encodedPhoto = try? Firestore.Encoder().encode(photo) else {return}
-        
-        try await photoRef.setData(encodedPhoto)
-    }
+    func uploadPhoto(keyword: String, prompt: String) async throws {
+      
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            guard let uiImage = uiImage else { return }
+            
+            let photoRef = Firestore.firestore().collection("Photos").document()
+            let imageUrl = try await ImageUploader.uploadImage(image: uiImage, compressionQualityCGFloat: 0.8, storageName: "photos")
+            
+            if let imageUrl = imageUrl {
+                let photo = Photo(id: "", ownerUid: uid, keyword: keyword, prompt: prompt, imageUrl: imageUrl, isCollected: false, timestamp: Timestamp())
+                let encodedPhoto = try Firestore.Encoder().encode(photo)
+                try await photoRef.setData(encodedPhoto)
+            } else {
+                print("Image upload failed")
+            }
     
+    }
     
     
 }
