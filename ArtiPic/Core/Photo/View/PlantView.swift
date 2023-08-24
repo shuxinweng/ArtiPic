@@ -26,7 +26,7 @@ struct PlantView: View {
                     }
                 }
             }
-            .navigationTitle("Photo Gallery")
+            .navigationTitle("Plant")
         }
         .onAppear {
             retrievePhotos()
@@ -52,8 +52,6 @@ struct PlantView: View {
                             if error == nil && data != nil {
                                 if let image = UIImage(data: data!) {
                                     let photoInfo = PhotoInfo(image: image, keyword: keyword, prompt: prompt)
-                                    
-                                    print("Image fetched:", imageUrl)
                                     
                                     DispatchQueue.main.async {
                                         retrievedImages.append(photoInfo)
