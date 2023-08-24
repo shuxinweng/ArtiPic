@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB31EE8B2A97B4F40070857A /* VIPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31EE8A2A97B4F40070857A /* VIPViewModel.swift */; };
 		DB3A7AC52A86890800160BFD /* ArtiPicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A7AC42A86890800160BFD /* ArtiPicApp.swift */; };
 		DB3A7AC72A86890800160BFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3A7AC62A86890800160BFD /* ContentView.swift */; };
 		DB3A7AC92A86890900160BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB3A7AC82A86890900160BFD /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		DB31EE832A9718700070857A /* ArtiPic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtiPic.entitlements; sourceTree = "<group>"; };
+		DB31EE8A2A97B4F40070857A /* VIPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPViewModel.swift; sourceTree = "<group>"; };
 		DB3A7AC12A86890800160BFD /* ArtiPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtiPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3A7AC42A86890800160BFD /* ArtiPicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtiPicApp.swift; sourceTree = "<group>"; };
 		DB3A7AC62A86890800160BFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				DB3D4AB02A922DB600E338AC /* AIViewModel.swift */,
+				DB31EE8A2A97B4F40070857A /* VIPViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				DB3D4AC42A97099E00E338AC /* VIPView.swift in Sources */,
 				DB3D4AC62A9709B900E338AC /* DeciderView.swift in Sources */,
 				E529B1C22A895F8E00C94E60 /* AIView.swift in Sources */,
+				DB31EE8B2A97B4F40070857A /* VIPViewModel.swift in Sources */,
 				DB3D4ABA2A93221B00E338AC /* PlantView.swift in Sources */,
 				E529B1A32A883F2900C94E60 /* CreatePasswordView.swift in Sources */,
 				E529B1992A8829B700C94E60 /* User.swift in Sources */,
