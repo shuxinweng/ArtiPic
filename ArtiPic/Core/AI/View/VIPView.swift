@@ -12,8 +12,12 @@ struct VIPView: View {
 
     var body: some View {
         VStack {
-            PaymentButton() {
-                paymentHandler.presentPaymentAuthorizationViewController()
+            if paymentHandler.isPaymentViewControllerPresented {
+                AIView()
+            } else {
+                PaymentButton() {
+                    paymentHandler.presentPaymentAuthorizationViewController()
+                }
             }
         }
     }

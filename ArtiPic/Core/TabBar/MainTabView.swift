@@ -22,6 +22,7 @@ struct MainTabView: View {
                 }.tag(0)
 
             DeciderView(user: user)
+//            AIView()
                 .onAppear{
                     selectedIndex = 1
                 }
