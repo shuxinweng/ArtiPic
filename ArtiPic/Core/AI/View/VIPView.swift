@@ -12,7 +12,7 @@ struct VIPView: View {
 
     var body: some View {
         VStack {
-            if paymentHandler.isPaymentViewControllerPresented {
+            if paymentHandler.isPaymentSuccess {
                 AIView()
             } else {
                 PaymentButton() {

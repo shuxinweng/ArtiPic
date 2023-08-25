@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class PaymentHandler: NSObject, ObservableObject, PKPaymentAuthorizationViewControllerDelegate {
-    @Published var isPaymentViewControllerPresented = false
+    @Published var isPaymentSuccess = false
     
     private var paymentRequest: PKPaymentRequest = {
         let request = PKPaymentRequest()
@@ -58,7 +58,7 @@ class PaymentHandler: NSObject, ObservableObject, PKPaymentAuthorizationViewCont
         }
         
         completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
-        isPaymentViewControllerPresented = true
+        isPaymentSuccess = true
     }
 }
 
