@@ -26,7 +26,7 @@ struct OtherView: View {
                     }
                 }
             }
-            .navigationTitle("Photo Gallery")
+            .navigationTitle("Other")
         }
         .onAppear {
             retrievePhotos()
@@ -52,8 +52,6 @@ struct OtherView: View {
                             if error == nil && data != nil {
                                 if let image = UIImage(data: data!) {
                                     let photoInfo = PhotoInfo(image: image, keyword: keyword, prompt: prompt)
-                                    
-                                    print("Image fetched:", imageUrl)
                                     
                                     DispatchQueue.main.async {
                                         retrievedImages.append(photoInfo)

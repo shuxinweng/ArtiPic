@@ -21,7 +21,7 @@ struct MainTabView: View {
                     Image(systemName: "photo.stack")
                 }.tag(0)
 
-            AIView()
+            DeciderView(user: user)
                 .onAppear{
                     selectedIndex = 1
                 }

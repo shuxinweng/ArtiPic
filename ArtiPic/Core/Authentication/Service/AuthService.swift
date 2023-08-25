@@ -37,12 +37,12 @@ class AuthService{
     }
     
     @MainActor
-    func createUser(email: String, password: String, username: String) async throws{
+    func createUser(email: String, password: String, username: String, isVIP: Bool) async throws{
         do{
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             //print("DEBUG: Did create user..")
-            await uploadUserData(uid: result.user.uid, username: username, email: email)
+            await uploadUserData(uid: result.user.uid, username: username, email: email, isVIP: isVIP)
             //print("DEBUG: Did upload user data..")
         }
         catch{
@@ -68,8 +68,8 @@ class AuthService{
         self.currentUser = nil
     }
     
-    private func uploadUserData(uid: String, username: String, email: String) async{
-        let user = User(id: uid, email: email, username: username)
+    private func uploadUserData(uid: String, username: String, email: String, isVIP: Bool) async{
+        let user = User(id: uid, email: email, username: username, isVIP: isVIP)
         self.currentUser = user
         guard let encodedUser = try? Firestore.Encoder().encode(user) else {return}
         try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
