@@ -19,7 +19,7 @@ class AIViewModel: ObservableObject {
     
     func setup() {
         guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
-            fatalError("Missing OPENAI_API_KEY environment variable")
+            fatalError("Missing OPENAI_API_KEY environment variable")  // exit the app will lose the fatalError may cause app crash
         }
         
         openai = OpenAI(Configuration(

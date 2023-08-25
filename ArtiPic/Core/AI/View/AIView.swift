@@ -38,8 +38,8 @@ struct AIView: View {
                         .fontWeight(.black)
                         .foregroundColor(Color(.systemBrown))
                 }
-                
-                
+
+
                 if isImageGenerated {
                     Button {
                         Task{
@@ -59,7 +59,7 @@ struct AIView: View {
                     Text("Keyword: ")
                         .fontWeight(.black)
                         .foregroundColor(Color(.systemBrown))
-                
+
                     Picker(selection: $keyword, label: Text("Select Keyword")) {
                         ForEach(options, id: \.self) { keyword in
                             Text(keyword).tag(keyword)
@@ -71,7 +71,7 @@ struct AIView: View {
                         RoundedRectangle(cornerRadius: 7)
                             .fill(Color.white)
                             .shadow(radius: 3)
-                )
+                    )
                 }
                 
                 TextField("Enter Image Prompt", text: $text)
@@ -105,41 +105,6 @@ struct AIView: View {
         }
     }
     
-//    func uploadPhoto() {
-//        guard image != nil else {
-//            return
-//        }
-//
-//        let storageRef = Storage.storage().reference()
-//
-//        let imageData = image!.jpegData(compressionQuality: 0.8)
-//
-//        guard imageData != nil else {
-//            return
-//        }
-//
-//        let path = "photos/\(UUID().uuidString).jpg"
-//        let fileRef = storageRef.child(path)
-//
-//        let _ = fileRef.putData(imageData!, metadata: nil) {
-//            metadata, error in
-//
-//            if error == nil && metadata != nil {
-//                let db = Firestore.firestore()
-//                db.collection(keyword).addDocument(data: [
-//                    "prompt": self.text,
-//                    "keyword": self.keyword,
-//                    "imageUrl": path
-//                ]) { error in
-//                    if error == nil {
-//                        DispatchQueue.main.async {
-//                            self.retrievedImages.append(self.image!)
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
 }
 
 struct AIView_Previews: PreviewProvider {
