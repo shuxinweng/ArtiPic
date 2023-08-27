@@ -49,6 +49,7 @@
 		E529B1CF2A8AF22D00C94E60 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1CE2A8AF22D00C94E60 /* ImageUploader.swift */; };
 		E529B1D22A8C437800C94E60 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E529B1D12A8C437800C94E60 /* Kingfisher */; };
 		E529B1D42A8C440C00C94E60 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1D32A8C440C00C94E60 /* CircularProfileImageView.swift */; };
+		E54055792A9AC66800527CE2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54055782A9AC66800527CE2 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		E529B1CC2A8AE90400C94E60 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		E529B1CE2A8AF22D00C94E60 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		E529B1D32A8C440C00C94E60 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		E54055782A9AC66800527CE2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				E529B1982A8829B700C94E60 /* User.swift */,
+				E54055782A9AC66800527CE2 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				DB3D4AB12A922DB600E338AC /* AIViewModel.swift in Sources */,
 				DB3D4AC82A970ED500E338AC /* PaymentButton.swift in Sources */,
 				DB3D4AC02A932F8F00E338AC /* SinglePhotoView.swift in Sources */,
+				E54055792A9AC66800527CE2 /* Photo.swift in Sources */,
 				DB3D4AB82A93220E00E338AC /* PeopleView.swift in Sources */,
 				E529B19F2A883CBC00C94E60 /* AddEmailView.swift in Sources */,
 				E529B1B42A8945BD00C94E60 /* AuthService.swift in Sources */,

@@ -9,12 +9,17 @@ import Foundation
 import OpenAIKit
 import SwiftUI
 
+import PhotosUI
+import Firebase
+
 class AIViewModel: ObservableObject {
     private var openai: OpenAI?
+    private var uiImage: UIImage?
+    @Published var postImage: Image?
     
     func setup() {
         guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
-            fatalError("Missing OPENAI_API_KEY environment variable")
+            fatalError("Missing OPENAI_API_KEY environment variable")  // exit the app will lose the environment data then fatalError may cause app crash
         }
         
         openai = OpenAI(Configuration(
@@ -37,6 +42,12 @@ class AIViewModel: ObservableObject {
             let result = try await openai.createImage(parameters: params)
             let data = result.data[0].image
             let image = try openai.decodeBase64Image(data)
+           
+            
+            self.uiImage = image
+            
+            
+            
             return image
         }
         catch {
@@ -44,4 +55,41 @@ class AIViewModel: ObservableObject {
             return nil
         }
     }
+    
+    func uploadPhoto(keyword: String, prompt: String) async throws {
+      
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uiImage = uiImage else { return }
+    
+        let db = Firestore.firestore()
+        var photoRef: DocumentReference!
+        
+        
+        // Check if the collection with the keyword exists
+        let photosCollectionRef = db.collection("photos").document("photos").collection(keyword)
+        let keywordCollectionSnapshot = try await photosCollectionRef.getDocuments()
+
+        if keywordCollectionSnapshot.isEmpty {
+            // If the collection doesn't exist, create it
+            photoRef = try await photosCollectionRef.addDocument(data: [:])
+        }
+        else{
+            photoRef = photosCollectionRef.document()
+        }
+        
+        
+    
+        let imageUrl = try await ImageUploader.uploadImage(image: uiImage, compressionQualityCGFloat: 0.8, storageName: "photos")
+        
+        if let imageUrl = imageUrl {
+            let photo = Photo(id: photoRef.documentID, ownerUid: uid, keyword: keyword, prompt: prompt, imageUrl: imageUrl, isCollected: false, timestamp: Timestamp())
+            let encodedPhoto = try Firestore.Encoder().encode(photo)
+            try await photoRef.setData(encodedPhoto)
+        } else {
+            print("Image upload failed")
+        }
+    
+    }
+    
+    
 }
