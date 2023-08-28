@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 struct SinglePhotoView: View {
     let photo: Photo
+    @State private var isSaved: Bool = false
     
     var body: some View {
         VStack {
@@ -26,10 +27,22 @@ struct SinglePhotoView: View {
                 .font(.headline)
                 .padding()
             
-            // Add other photo details here
+            Button(action: {
+                toggleSave()
+            }) {
+                Image(systemName: isSaved ? "heart.fill" : "heart")
+                    .font(.system(size: 24))
+                    .foregroundColor(isSaved ? .red : .gray)
+            }
             
             Spacer()
         }
+    }
+    
+    private func toggleSave() {
+        
+        
+        isSaved.toggle()
     }
 }
 
