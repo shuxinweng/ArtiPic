@@ -65,17 +65,32 @@ class AIViewModel: ObservableObject {
         var photoRef: DocumentReference!
         
         
+//        // Check if the collection with the keyword exists
+//        let photosCollectionRef = db.collection("photos").document("photos").collection(keyword)
+//        let keywordCollectionSnapshot = try await photosCollectionRef.getDocuments()
+//
+//        if keywordCollectionSnapshot.isEmpty {
+//            // If the collection doesn't exist, create it
+//            photoRef = try await photosCollectionRef.addDocument(data: [:])
+//        }
+//        else{
+//            photoRef = photosCollectionRef.document()
+//        }
+        
         // Check if the collection with the keyword exists
-        let photosCollectionRef = db.collection("photos").document("photos").collection(keyword)
+        let photosDocumentRef = db.collection("categories").document(keyword)
+        let photosCollectionRef = db.collection("categories").document(keyword).collection(keyword)
         let keywordCollectionSnapshot = try await photosCollectionRef.getDocuments()
 
         if keywordCollectionSnapshot.isEmpty {
-            // If the collection doesn't exist, create it
+            // If the document and collection doesn't exist, create it
+            try await photosDocumentRef.setData([:])
             photoRef = try await photosCollectionRef.addDocument(data: [:])
         }
         else{
             photoRef = photosCollectionRef.document()
         }
+
         
         
     
