@@ -58,28 +58,6 @@ struct PhotosView: View {
             }
         }
     }
-
-    
-    
-
-//    private func fetchPhotos() {
-//        let db = Firestore.firestore()
-//        db.collection("categories").document(keyword).collection(keyword).getDocuments{ snapshot, error in
-//            if let error = error {
-//                print("Error fetching photos: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            guard let documents = snapshot?.documents else {
-//                return
-//            }
-//
-//            self.photoURLs = documents.compactMap { document in
-//                let imageURL = document.data()["imageUrl"] as? String
-//                return URL(string: imageURL ?? "")
-//            }
-//        }
-//    }
 }
 
 struct PhotosView_Previews: PreviewProvider {
