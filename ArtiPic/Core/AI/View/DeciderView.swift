@@ -13,8 +13,7 @@ struct DeciderView: View {
     var body: some View {
         Group{
             if user.isVIP == false {
-//                VIPView()
-                AIView()
+                VIPView()
             }
             else if user.isVIP == true {
                 AIView()
