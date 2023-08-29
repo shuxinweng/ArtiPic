@@ -6,39 +6,66 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct CategoryView: View {
+    @State private var keywords: [String] = []
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                
-                NavigationLink(destination: PhotoView()) {
-                    Text("Photo")
+            List {
+                ForEach(keywords, id: \.self) { keyword in
+                    NavigationLink(destination: PhotosView(keyword: keyword)) {
+                        CategoryRow(keyword: keyword)
+                    }
                 }
-                
-                Spacer()
-                
-                NavigationLink(destination: PeopleView()) {
-                    Text("People")
-                }
-                
-                Spacer()
-                
-                NavigationLink(destination: PlantView()) {
-                    Text("Plant")
-                }
-                
-                Spacer()
-                
-                NavigationLink(destination: OtherView()) {
-                    Text("Other")
-                }
-                
-                Spacer()
             }
             .navigationBarTitle("Categories")
+            .onAppear {
+                fetchKeywords()
+            }
         }
+    }
+    
+    private func fetchKeywords() {
+        let db = Firestore.firestore()
+        db.collection("categories").getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching keywords: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let documents = snapshot?.documents else {
+                return
+            }
+            
+            self.keywords = documents.map { $0.documentID }
+        }
+    }
+}
+
+struct CategoryRow: View {
+    var keyword: String
+    
+    var body: some View {
+        HStack(alignment: .center) {
+//            Image(keyword)
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .frame(height: 100)
+//                .clipped()
+//                .opacity(0.8)
+            
+            Text(keyword)
+                .foregroundColor(.brown)
+                .font(.title)
+                .padding()
+                .fontWeight(.bold)
+                
+            Spacer()
+                
+        }
+        .frame(maxWidth: .infinity, minHeight: 80)
     }
 }
 

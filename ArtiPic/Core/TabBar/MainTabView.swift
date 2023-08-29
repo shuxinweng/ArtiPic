@@ -29,7 +29,7 @@ struct MainTabView: View {
                     Image(systemName: "paintbrush.pointed.fill")
                 }.tag(1)
 
-            CollectionView()
+            CollectionView(user: user)
                 .onAppear{
                     selectedIndex = 2
                 }
