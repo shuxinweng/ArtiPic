@@ -9,7 +9,6 @@ import SwiftUI
 import Firebase
 
 struct CategoryView: View {
-    
     @State private var keywords: [String] = []
     
     var body: some View {
