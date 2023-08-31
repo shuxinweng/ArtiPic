@@ -8,7 +8,7 @@
 import Foundation
 import OpenAIKit
 import SwiftUI
-
+import FirebaseFirestore
 import PhotosUI
 import Firebase
 

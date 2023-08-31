@@ -55,7 +55,7 @@ struct AIView: View {
                             keyword = ""
                         }
                     } label: {
-                        Text("Upload photo")
+                        Text("Upload Photo")
                     }
                 }
                 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
 
 struct CategoryView: View {
     @State private var keywords: [String] = []
