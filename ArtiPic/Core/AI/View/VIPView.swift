@@ -15,6 +15,8 @@ struct VIPView: View {
             if paymentHandler.isPaymentSuccess {
                 AIView()
             } else {
+                // TODO: VIP AD design UI
+                
                 PaymentButton() {
                     paymentHandler.presentPaymentAuthorizationViewController()
                 }

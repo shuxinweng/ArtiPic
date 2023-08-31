@@ -73,6 +73,8 @@ struct ProfileView: View {
                 
                 // post grid view
                 //PostGridView(posts: posts)
+                
+                // TODO: Adding Other Profile components
                     
             }
             .navigationBarTitleDisplayMode(.inline)

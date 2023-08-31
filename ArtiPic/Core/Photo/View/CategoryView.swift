@@ -57,6 +57,9 @@ struct CategoryRow: View {
 //                .clipped()
 //                .opacity(0.8)
             
+            // TODO: Add some random picture/colors to the keyword text
+            // It is now too boring
+            
             Text(keyword)
                 .foregroundColor(.brown)
                 .font(.title)
