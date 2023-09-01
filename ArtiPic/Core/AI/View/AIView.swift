@@ -39,7 +39,6 @@ struct AIView: View {
                         .foregroundColor(Color(.systemBrown))
                 }
 
-
                 if isImageGenerated {
                     // TODO: Upload Button UI design
                     
@@ -62,7 +61,6 @@ struct AIView: View {
                 }
                 
                 Spacer()
-                
                 
                 HStack {
                     Text("Select Keyword: ")
@@ -95,9 +93,6 @@ struct AIView: View {
                 TextField("Enter Image Prompt", text: $text)
                     .modifier(TextFieldModifier())
                     .padding(.bottom, 12)
-                
-                
-        
                 
                 Button("Generate") {
                     if !text.trimmingCharacters(in: .whitespaces).isEmpty {

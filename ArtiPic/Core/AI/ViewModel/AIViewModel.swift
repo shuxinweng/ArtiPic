@@ -18,16 +18,16 @@ class AIViewModel: ObservableObject {
     @Published var postImage: Image?
     
     func setup() {
-        guard let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] else {
-            fatalError("Missing OPENAI_API_KEY environment variable")  // exit the app will lose the environment data then fatalError may cause app crash
+        if let path = Bundle.main.path(forResource: "OPENAI_API_KEY", ofType: "plist"),
+           let configDict = NSDictionary(contentsOfFile: path),
+           let apiKey = configDict["OPENAI_API_KEY"] as? String {
+            openai = OpenAI(Configuration(
+                organizationId: "Personal",
+                apiKey: apiKey
+            ))
         }
-        
-        openai = OpenAI(Configuration(
-            organizationId: "Personal",
-            apiKey: apiKey
-        ))
     }
-    
+        
     func generateImage(prompt: String) async -> UIImage? {
         guard let openai = openai else {
             return nil
@@ -42,11 +42,8 @@ class AIViewModel: ObservableObject {
             let result = try await openai.createImage(parameters: params)
             let data = result.data[0].image
             let image = try openai.decodeBase64Image(data)
-           
-            
+
             self.uiImage = image
-            
-            
             
             return image
         }
@@ -55,15 +52,14 @@ class AIViewModel: ObservableObject {
             return nil
         }
     }
-    
+        
     func uploadPhoto(keyword: String, prompt: String) async throws {
-      
+        
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let uiImage = uiImage else { return }
-    
+        
         let db = Firestore.firestore()
         var photoRef: DocumentReference!
-        
         
 //        // Check if the collection with the keyword exists
 //        let photosCollectionRef = db.collection("photos").document("photos").collection(keyword)
@@ -81,7 +77,7 @@ class AIViewModel: ObservableObject {
         let photosDocumentRef = db.collection("categories").document(keyword)
         let photosCollectionRef = db.collection("categories").document(keyword).collection(keyword)
         let keywordCollectionSnapshot = try await photosCollectionRef.getDocuments()
-
+        
         if keywordCollectionSnapshot.isEmpty {
             // If the document and collection doesn't exist, create it
             try await photosDocumentRef.setData([:])
@@ -90,10 +86,7 @@ class AIViewModel: ObservableObject {
         else{
             photoRef = photosCollectionRef.document()
         }
-
         
-        
-    
         let imageUrl = try await ImageUploader.uploadImage(image: uiImage, compressionQualityCGFloat: 0.8, storageName: "photos")
         
         if let imageUrl = imageUrl {
@@ -103,8 +96,5 @@ class AIViewModel: ObservableObject {
         } else {
             print("Image upload failed")
         }
-    
     }
-    
-    
 }
