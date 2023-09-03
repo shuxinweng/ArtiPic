@@ -18,7 +18,6 @@
 		DB3D4AC42A97099E00E338AC /* VIPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AC32A97099E00E338AC /* VIPView.swift */; };
 		DB3D4AC62A9709B900E338AC /* DeciderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AC52A9709B900E338AC /* DeciderView.swift */; };
 		DB3D4AC82A970ED500E338AC /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D4AC72A970ED500E338AC /* PaymentButton.swift */; };
-		DBE59C6B2AA40ECA00BBF552 /* OPENAI_API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBE59C6A2AA40ECA00BBF552 /* OPENAI_API_KEY.plist */; };
 		E529B1942A88233100C94E60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1932A88233100C94E60 /* MainTabView.swift */; };
 		E529B1972A88288800C94E60 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1962A88288800C94E60 /* ProfileView.swift */; };
 		E529B1992A8829B700C94E60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E529B1982A8829B700C94E60 /* User.swift */; };
@@ -47,6 +46,8 @@
 		E54055792A9AC66800527CE2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54055782A9AC66800527CE2 /* Photo.swift */; };
 		E540557E2A9C276A00527CE2 /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E540557D2A9C276A00527CE2 /* PhotosView.swift */; };
 		E54055822A9C392700527CE2 /* SinglePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54055812A9C392700527CE2 /* SinglePhotoView.swift */; };
+		E5B377512AA419E000A73EDC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E5B377502AA419E000A73EDC /* .gitignore */; };
+		E5B377532AA41A0800A73EDC /* OPENAI_API_KEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5B377522AA41A0800A73EDC /* OPENAI_API_KEY.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +63,6 @@
 		DB3D4AC32A97099E00E338AC /* VIPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPView.swift; sourceTree = "<group>"; };
 		DB3D4AC52A9709B900E338AC /* DeciderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeciderView.swift; sourceTree = "<group>"; };
 		DB3D4AC72A970ED500E338AC /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
-		DBE59C6A2AA40ECA00BBF552 /* OPENAI_API_KEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = OPENAI_API_KEY.plist; sourceTree = "<group>"; };
 		E529B1932A88233100C94E60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E529B1962A88288800C94E60 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E529B1982A8829B700C94E60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -86,6 +86,8 @@
 		E54055782A9AC66800527CE2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E540557D2A9C276A00527CE2 /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
 		E54055812A9C392700527CE2 /* SinglePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePhotoView.swift; sourceTree = "<group>"; };
+		E5B377502AA419E000A73EDC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E5B377522AA41A0800A73EDC /* OPENAI_API_KEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = OPENAI_API_KEY.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +135,7 @@
 				E529B1A62A8942CD00C94E60 /* GoogleService-Info.plist */,
 				DB3A7AC82A86890900160BFD /* Assets.xcassets */,
 				DB3A7ACA2A86890900160BFD /* Preview Content */,
-				DBE59C6A2AA40ECA00BBF552 /* OPENAI_API_KEY.plist */,
+				E5B377502AA419E000A73EDC /* .gitignore */,
 			);
 			path = ArtiPic;
 			sourceTree = "<group>";
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				DB3A7ACB2A86890900160BFD /* Preview Assets.xcassets */,
+				E5B377522AA41A0800A73EDC /* OPENAI_API_KEY.plist */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -434,10 +437,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B377512AA419E000A73EDC /* .gitignore in Resources */,
 				DB3A7ACC2A86890900160BFD /* Preview Assets.xcassets in Resources */,
 				DB3A7AC92A86890900160BFD /* Assets.xcassets in Resources */,
+				E5B377532AA41A0800A73EDC /* OPENAI_API_KEY.plist in Resources */,
 				E529B1A72A8942CD00C94E60 /* GoogleService-Info.plist in Resources */,
-				DBE59C6B2AA40ECA00BBF552 /* OPENAI_API_KEY.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
