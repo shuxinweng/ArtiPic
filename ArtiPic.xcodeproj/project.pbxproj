@@ -108,6 +108,7 @@
 		DB3A7AB82A86890800160BFD = {
 			isa = PBXGroup;
 			children = (
+				DBE59C682AA25D1D00BBF552 /* OPENAI_API_KEY.plist */,
 				DB3A7AC32A86890800160BFD /* ArtiPic */,
 				DB3A7AC22A86890800160BFD /* Products */,
 			);
@@ -326,7 +327,6 @@
 			children = (
 				DB3D4AAD2A9228D700E338AC /* View */,
 				DB3D4AAC2A9228CF00E338AC /* ViewModel */,
-				DBE59C682AA25D1D00BBF552 /* OPENAI_API_KEY.plist */,
 			);
 			path = AI;
 			sourceTree = "<group>";
