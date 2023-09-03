@@ -16,20 +16,20 @@ struct PhotosView: View {
 
     var body: some View {
         ScrollView {
-                    LazyVStack(spacing: 10) {
-                        ForEach(photos) { photo in
-                            NavigationLink(destination: SinglePhotoView(photo: photo)) {
-                                KFImage(URL(string: photo.imageUrl))
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(maxWidth: .infinity, maxHeight: 300)
-                                    .frame(width: UIScreen.main.bounds.width - 40, height: 200)
-                                    .cornerRadius(8)
-                                    .shadow(radius: 5)
-                            }
-                        }
+            LazyVStack(spacing: 10) {
+                ForEach(photos) { photo in
+                    NavigationLink(destination: SinglePhotoView(photo: photo)) {
+                        KFImage(URL(string: photo.imageUrl))
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: .infinity, maxHeight: 300)
+                            .frame(width: UIScreen.main.bounds.width - 40, height: 200)
+                            .cornerRadius(8)
+                            .shadow(radius: 5)
                     }
                 }
+            }
+        }
         .onAppear {
             fetchPhotos()
         }

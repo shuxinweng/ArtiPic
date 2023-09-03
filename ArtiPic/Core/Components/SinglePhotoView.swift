@@ -8,6 +8,7 @@
 import SwiftUI
 import Kingfisher
 import Firebase
+import FirebaseFirestore
 
 struct SinglePhotoView: View {
     let photo: Photo

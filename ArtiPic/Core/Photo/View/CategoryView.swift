@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
 
 struct CategoryView: View {
     @State private var keywords: [String] = []
@@ -55,6 +56,9 @@ struct CategoryRow: View {
 //                .frame(height: 100)
 //                .clipped()
 //                .opacity(0.8)
+            
+            // TODO: Add some random picture/colors to the keyword text
+            // It is now too boring
             
             Text(keyword)
                 .foregroundColor(.brown)
