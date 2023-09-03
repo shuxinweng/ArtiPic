@@ -40,8 +40,6 @@ struct AIView: View {
                 }
 
                 if isImageGenerated {
-                    // TODO: Upload Button UI design
-                    
                     Button {
                         Task{
                             if keyword.isEmpty {
@@ -58,6 +56,7 @@ struct AIView: View {
                     } label: {
                         Text("Upload Photo")
                     }
+                    // TODO: Upload Button UI design
                 }
                 
                 Spacer()
