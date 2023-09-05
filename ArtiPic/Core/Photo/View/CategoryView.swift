@@ -47,7 +47,13 @@ struct CategoryView: View {
 
 struct CategoryRow: View {
     var keyword: String
-    
+    var backgroundColor: Color
+
+    init(keyword: String) {
+        self.keyword = keyword
+        self.backgroundColor = Color.random()
+    }
+
     var body: some View {
         HStack(alignment: .center) {
 //            Image(keyword)
@@ -57,19 +63,28 @@ struct CategoryRow: View {
 //                .clipped()
 //                .opacity(0.8)
             
-            // TODO: Add some random picture/colors to the keyword text
-            // It is now too boring
-            
             Text(keyword)
-                .foregroundColor(.brown)
+                .foregroundColor(.white)
                 .font(.title)
                 .padding()
                 .fontWeight(.bold)
-                
+            
             Spacer()
-                
         }
         .frame(maxWidth: .infinity, minHeight: 80)
+        .background(
+            backgroundColor
+                .cornerRadius(8)
+        )
+    }
+}
+
+extension Color {
+    static func random() -> Color {
+        let red = Double.random(in: 0..<1)
+        let green = Double.random(in: 0..<1)
+        let blue = Double.random(in: 0..<1)
+        return Color(red: red, green: green, blue: blue)
     }
 }
 
