@@ -36,7 +36,7 @@ struct AIView: View {
                 else {
                     Text("Please enter Keyword and Prompt to generate image")
                         .fontWeight(.black)
-                        .foregroundColor(Color(.systemBrown))
+                        .foregroundColor(Color.black)
                 }
 
                 if isImageGenerated {
@@ -69,7 +69,7 @@ struct AIView: View {
                 HStack {
                     Text("Select Keyword: ")
                         .fontWeight(.bold)
-                        .foregroundColor(Color(.systemBrown))
+                        .foregroundColor(Color.black)
 
                     Picker(selection: $keyword, label: Text("Select Keyword")) {
                         ForEach(options, id: \.self) { keyword in

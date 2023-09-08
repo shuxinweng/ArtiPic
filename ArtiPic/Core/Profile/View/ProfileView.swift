@@ -55,12 +55,10 @@ struct ProfileView: View {
                         Text("Edit Profile")
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                            .frame(width: 360, height: 34)
-                            .foregroundColor(.black)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 6)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            )
+                            .foregroundColor(.white)
+                            .frame(width: 360, height: 40)
+                            .background(Color(.systemBrown))
+                            .cornerRadius(7)
                     }
                     
                     
