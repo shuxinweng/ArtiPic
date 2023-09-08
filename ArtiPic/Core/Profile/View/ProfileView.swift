@@ -64,6 +64,22 @@ struct ProfileView: View {
                     
                     
                     Divider()
+                    
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.gray.opacity(0.5))
+                            .frame(width: 360, height: 450)
+
+                        VStack {
+                            Text("Sponsor & Advertising")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                        }
+                    }
+
+
+                    
                 }
                 .fullScreenCover(isPresented: $showEditProfile) {
                     EditProfileView(user: user)
