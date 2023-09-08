@@ -31,7 +31,9 @@ struct AIView: View {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 250, height: 250)
+                        .frame(width: 360, height: 360)
+                        .cornerRadius(8)
+                        .shadow(radius: 5)
                 }
                 else {
                     Text("Please enter Keyword and Prompt to generate image")
