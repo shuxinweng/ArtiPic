@@ -8,16 +8,21 @@
 import SwiftUI
 import Firebase
 import FirebaseFirestore
+import Kingfisher
 
 struct CategoryView: View {
     @State private var keywords: [String] = []
+    @State private var categoryImages: [String: String] = [:]
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(keywords, id: \.self) { keyword in
                     NavigationLink(destination: PhotosView(keyword: keyword)) {
-                        CategoryRow(keyword: keyword)
+                        CategoryRow(keyword: keyword, categoryImageURL: categoryImages[keyword] ?? "")
+                                .background(Color.clear)
+                                .cornerRadius(8)
+                                .shadow(radius: 5)
                     }
                 }
             }
@@ -27,6 +32,8 @@ struct CategoryView: View {
             }
         }
     }
+    
+        
     
     private func fetchKeywords() {
         let db = Firestore.firestore()
@@ -41,50 +48,67 @@ struct CategoryView: View {
             }
             
             self.keywords = documents.map { $0.documentID }
+            
+            // Fetch the first image URL for each keyword
+            for keyword in self.keywords {
+                db.collection("categories").document(keyword).collection(keyword).limit(to: 1).getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching category image: \(error.localizedDescription)")
+                        return
+                    }
+                    
+                    guard let document = snapshot?.documents.first, let imageUrl = document["imageUrl"] as? String else {
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.categoryImages[keyword] = imageUrl
+                    }
+                }
+            }
         }
     }
+        
 }
 
 struct CategoryRow: View {
     var keyword: String
-    var backgroundColor: Color
-
-    init(keyword: String) {
+    var categoryImageURL: String
+    
+    init(keyword: String, categoryImageURL: String) {
         self.keyword = keyword
-        self.backgroundColor = Color.random()
+        self.categoryImageURL = categoryImageURL
     }
-
+    
     var body: some View {
-        HStack(alignment: .center) {
-//            Image(keyword)
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .frame(height: 100)
-//                .clipped()
-//                .opacity(0.8)
+        ZStack(alignment: .center) {
+            KFImage(URL(string: categoryImageURL))
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.main.bounds.width - 30, height: 120)
+                .cornerRadius(8)
+                .shadow(radius: 5)
+                .brightness(-0.4)
             
-            Text(keyword)
-                .foregroundColor(.white)
-                .font(.title)
-                .padding()
-                .fontWeight(.bold)
             
-            Spacer()
+            HStack {
+                Text(keyword.uppercased())
+                    .foregroundColor(.white)
+                    .font(.system(size: 30))
+                    .padding()
+                    .fontWeight(.bold)
+                    .shadow(radius: 100)
+                    .cornerRadius(8)
+                    .padding(15)
+                
+                
+                Spacer ()
+            }
         }
         .frame(maxWidth: .infinity, minHeight: 80)
-        .background(
-            backgroundColor
-                .cornerRadius(8)
-        )
-    }
-}
-
-extension Color {
-    static func random() -> Color {
-        let red = Double.random(in: 0..<1)
-        let green = Double.random(in: 0..<1)
-        let blue = Double.random(in: 0..<1)
-        return Color(red: red, green: green, blue: blue)
+        .background(Color.black)
+        .cornerRadius(8)
+        .shadow(radius: 5)
     }
 }
 
@@ -93,3 +117,4 @@ struct CategoryView_Previews: PreviewProvider {
         CategoryView()
     }
 }
+

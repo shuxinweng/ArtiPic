@@ -60,18 +60,7 @@ class AIViewModel: ObservableObject {
         
         let db = Firestore.firestore()
         var photoRef: DocumentReference!
-        
-//        // Check if the collection with the keyword exists
-//        let photosCollectionRef = db.collection("photos").document("photos").collection(keyword)
-//        let keywordCollectionSnapshot = try await photosCollectionRef.getDocuments()
-//
-//        if keywordCollectionSnapshot.isEmpty {
-//            // If the collection doesn't exist, create it
-//            photoRef = try await photosCollectionRef.addDocument(data: [:])
-//        }
-//        else{
-//            photoRef = photosCollectionRef.document()
-//        }
+
         
         // Check if the collection with the keyword exists
         let photosDocumentRef = db.collection("categories").document(keyword)

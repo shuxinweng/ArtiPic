@@ -121,6 +121,12 @@ struct VIPView: View {
                     PaymentButton() {
                         paymentHandler.presentPaymentAuthorizationViewController()
                     }
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.white)
+                    .frame(width: 360, height: 40)
+                    .background(Color(.systemBrown))
+                    .cornerRadius(7)
                     
                     Spacer()
                 }
