@@ -55,10 +55,15 @@ struct AIView: View {
                         }
                     } label: {
                         Text("Upload Photo")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(width: 200, height: 40)
+                            .background(Color(.systemBrown))
+                            .cornerRadius(7)
                     }
-                    // TODO: Upload Button UI design
                 }
-                
+
                 Spacer()
                 
                 HStack {
