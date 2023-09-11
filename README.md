@@ -29,3 +29,10 @@ Made by: Shuxin Weng and Zongming Ke
 ## Getting Started
 
 Open the project on xcode after cloning the repo onto your own machine and run the program in the simulator.
+
+## Demo
+
+<img src="https://github.com/shuxinweng/ArtiPic/assets/87344908/8541dd75-3888-475c-8b09-196f9909e40a" alt="demo1" width="" height="400">
+<img src="https://github.com/shuxinweng/ArtiPic/assets/87344908/6f3dcc8e-3629-406e-bccc-34bec2dbfe0f" alt="demo1" width="" height="400">
+
+
